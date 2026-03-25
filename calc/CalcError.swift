@@ -2,11 +2,11 @@
 
 /// Errors reported by the calculator during parsing or evaluation.
 enum CalcError: Error, CustomStringConvertible {
-    case missingExpression
-    case expectedNumber(String)
-    case unexpectedToken(String)
-    case divisionByZero
-    case integerOverflow
+    case missingExpression             // empty input
+    case expectedNumber(String)        // a number was expected here
+    case unexpectedToken(String)       // invalid token
+    case divisionByZero                // cannot divide by zero
+    case integerOverflow               // the result is too large
 
     var description: String {
         switch self {
